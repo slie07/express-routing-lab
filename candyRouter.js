@@ -30,4 +30,15 @@ router.post('/', function(req, res) {
 	res.send(req.body);
 });
 
+router.put('/:id', function(req, res) {
+	// UPDATE//
+	candies[req.params.id-1] = req.body;
+	res.send(req.body);
+});
+
+router.delete('/:id', function(req, res) {
+	// DELETE
+	candies.splice(req.params.id-1, 1);
+	res.send(req.body);
+});
 module.exports = router;
